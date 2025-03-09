@@ -104,11 +104,19 @@ function App() {
           </div>
 
           <button
-            className="text-xl text-white my-9 px-6 py-3 bg-blue-700 rounded-3xl mx-auto"
+            className="text-xl text-white mt-12 px-6 py-3 bg-blue-700 rounded-3xl mx-auto"
             onClick={calculate}
           >
             Convert {from} to {to}
           </button>
+
+          <div className="w-full justify-self-center mx-2 mb-3 mt-4 h-8 ">
+            {loading && <p className="text-white text-center">Loading...</p>}
+            {error && <p className="text-red-500 text-center">{error}</p>}
+            {!loading && !error && (
+              <span className="opacity-0">Placeholder</span>
+            )}
+          </div>
         </div>
       </form>
     </section>
