@@ -35,15 +35,15 @@ function App() {
   };
 
   return (
-    <section className="w-screen h-screen bg-gray-200 flex justify-center items-center">
+    <section className="w-screen h-screen bg-gray-200 flex justify-center items-center ">
       <form
-        className="w-3/4 justify-items-center"
+        className="w-3/4 justify-items-center text-black-500"
         onSubmit={(e) => {
           e.preventDefault();
           calculate();
         }}
       >
-        <div className="flex flex-col w-2/3 min-w-max max-w-screen-md shadow-md rounded-2xl px-14 py-3 bg-gray-800 text-black-500">
+        <div className="flex flex-col w-2/3 min-w-max max-w-screen-md shadow-md rounded-2xl px-14 py-3 bg-gray-800 ">
           <h1 className="text-white text-center my-9 text-3xl">
             Currency Converter
           </h1>
@@ -55,7 +55,7 @@ function App() {
                 className="outline-1 w-fit bg-transparent bg-slate-100 m-4 mb-8"
                 placeholder="Amount"
                 inputValue={amount}
-                setInputValue={setAmount}
+                setInputValue={(amount) => setAmount(amount)}
                 inputId="number"
                 labelClassName="my-4 ml-4 text-lg font-medium"
                 label={from}
@@ -66,7 +66,7 @@ function App() {
               <Select
                 className="w-full text-right outline-none mt-4 bg-slate-100 rounded-xl"
                 selectValue={from}
-                setSelectValue={setFrom}
+                setSelectValue={(form) => setFrom(form)}
                 selectOptions={options}
               />
             </div>
@@ -97,7 +97,7 @@ function App() {
               <Select
                 className="w-full text-right outline-none mt-4 bg-slate-100 rounded-xl"
                 selectValue={to}
-                setSelectValue={setTo}
+                setSelectValue={(to) => setTo(to)}
                 selectOptions={options}
               />
             </div>
@@ -109,9 +109,6 @@ function App() {
           >
             Convert {from} to {to}
           </button>
-
-          {loading && <p className="text-white text-center">Loading...</p>}
-          {error && <p className="text-red-500 text-center">{error}</p>}
         </div>
       </form>
     </section>
