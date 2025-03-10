@@ -2,7 +2,14 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
 import { CustomRoute } from "./CustomRoute.jsx";
-import { Home, About, Contact, User, Github } from "./layout/Layout";
+import {
+  Home,
+  About,
+  Contact,
+  User,
+  Github,
+  GithubInfoLoader,
+} from "./layout/Layout";
 
 import {
   createBrowserRouter,
@@ -18,13 +25,16 @@ const route = createBrowserRouter(
       <Route path="about" element={<About />} />
       <Route path="contact" element={<Contact />} />
       <Route path="user" element={<User />}>
-        <Route path=":user" element={<User />} />
+        <Route path=":userid" element={<User />} />
       </Route>
-
-      <Route path="github" element={<Github />} />
+      <Route loader={GithubInfoLoader} path="github" element={<Github />} />
       <Route
         path="*"
-        element={<div className="w-full bg-gray-800 ">Not Found</div>}
+        element={
+          <div className="w-max  text-orange-600 font-medium text-5xl">
+            Not Found !!!!
+          </div>
+        }
       />
     </Route>
   )
