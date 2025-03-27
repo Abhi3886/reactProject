@@ -1,5 +1,5 @@
 {
-  "name": "password_generator",
+  "name": "password_generator.json",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "password_generator": "file:",
+    "password_generator.json": "file:",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
