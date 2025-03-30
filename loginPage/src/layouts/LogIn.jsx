@@ -1,11 +1,14 @@
 import { useState, useCallback } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { logInToHide } from "../features/index";
 
 function LogIn() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({}); // Store field-specific errors
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const validateForm = useCallback(() => {
     let newErrors = {};
@@ -34,6 +37,7 @@ function LogIn() {
 
       if (res.ok) {
         navigate("/");
+        dispatch(logInToHide(true));
       }
 
       if (data.error) {

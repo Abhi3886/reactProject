@@ -3,7 +3,7 @@ import express from "express";
 import routes from "./routes/index.js";
 import { connectDB } from "./database/Database.js";
 import cors from "cors";
-import { Autherization } from "./middleware/Autherization.js";
+import { Authorization } from "./middleware/Authorization.js";
 
 dotenv.config();
 const PORT = 5000;
@@ -27,7 +27,7 @@ app.get("/", (req, res) => {
 app.use("/api", routes);
 
 //protected
-app.post("/Github", Autherization, async (req, res) => {});
+app.post("/Github", Authorization, async (req, res) => {});
 
 app.listen(PORT, async () => {
   try {

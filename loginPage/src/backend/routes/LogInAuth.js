@@ -1,6 +1,6 @@
 import express from "express";
 import bcrypt from "bcryptjs";
-import { connectDB } from "../DB/DataBase.js";
+import { connectDB } from "../database/DataBase.js";
 
 const LogInAuth = express.Router();
 
@@ -25,7 +25,7 @@ LogInAuth.post("/Log-in", async (req, res) => {
       return res.status(401).json({ error: "Invalid password" });
     }
 
-    res.status(201).json({ message: "Login Successfully" });
+    res.status(201).json({ message: "Login Successfully", toHide: true });
 
     db.end();
   } catch (error) {

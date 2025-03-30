@@ -1,3 +1,3 @@
-import { Autherization } from "./Autherization";
+import { Authorization } from "./Authorization";
 
-export { Autherization };
+export { Authorization };

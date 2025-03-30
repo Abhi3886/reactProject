@@ -1,5 +1,7 @@
 import React, { useCallback, useState, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { signUpToHide } from "../features/index";
 
 function SignUp() {
   const [username, setUsername] = useState("");
@@ -9,6 +11,7 @@ function SignUp() {
   const [rePassword, setRePassword] = useState("");
   const [errors, setErrors] = useState({}); // Store field-specific errors
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const validateForm = useCallback(() => {
     let newErrors = {};
@@ -75,6 +78,11 @@ function SignUp() {
       } else {
         console.log(data.message);
         setErrors({}); // Clear errors on success
+      }
+
+      if (res.ok) {
+        navigate("/");
+        dispatch(signUpToHide(true));
       }
     } catch (error) {
       setErrors({

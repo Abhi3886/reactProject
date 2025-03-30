@@ -1,6 +1,6 @@
 import express from "express";
 import bcrypt from "bcryptjs";
-import { connectDB } from "../DB/DataBase.js";
+import { connectDB } from "../database/DataBase.js";
 
 const SignUpAuth = express.Router();
 
@@ -25,7 +25,9 @@ SignUpAuth.post("/Sign-up", async (req, res) => {
     const query = `INSERT INTO users (fullname, username, email, password) VALUES (?, ?, ?, ?)`;
     await db.execute(query, [fullname, username, email, hashPass]);
 
-    res.status(201).json({ message: "User Registered Successfully" });
+    res
+      .status(201)
+      .json({ message: "User Registered Successfully", tohide: true });
 
     db.end();
   } catch (error) {
