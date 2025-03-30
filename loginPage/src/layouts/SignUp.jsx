@@ -69,10 +69,6 @@ function SignUp() {
 
       const data = await res.json();
 
-      if (res.ok) {
-        navigate("/");
-      }
-
       if (data.error) {
         setErrors({ ...errors, backend: data.error }); // Handle backend errors
       } else {
