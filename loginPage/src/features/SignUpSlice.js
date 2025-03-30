@@ -4,7 +4,7 @@ const initialState = {
   isSignUpToHide: false,
 };
 
-const SignUpSlice = createSlice({
+export const SignUpSlice = createSlice({
   name: "SignUpToHide",
   initialState,
   reducers: {
@@ -14,7 +14,7 @@ const SignUpSlice = createSlice({
   },
 });
 
-const { signUpToHide } = SignUpSlice.actions;
-const SignUpReducer = SignUpSlice.reducer;
+export const { signUpToHide } = SignUpSlice.actions;
 
-export default { SignUpSlice, signUpToHide, SignUpReducer };
+const SignUpReducer = SignUpSlice.reducer;
+export default SignUpReducer;

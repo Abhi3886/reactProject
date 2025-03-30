@@ -4,7 +4,7 @@ const initialState = {
   isLogInToHide: false,
 };
 
-const LogInSlice = createSlice({
+export const LogInSlice = createSlice({
   name: "LogInToHide",
   initialState,
   reducers: {
@@ -14,8 +14,7 @@ const LogInSlice = createSlice({
   },
 });
 
-const { logInToHide } = LogInSlice.actions;
+export const { logInToHide } = LogInSlice.actions;
 
 const LogInReducer = LogInSlice.reducer;
-
-export default { logInToHide, LogInReducer, LogInSlice };
+export default LogInReducer;

@@ -1,6 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { SignUpReducer, LogInReducer } from "../../features/index";
+import { SignUpReducer, LogInReducer } from "../../features";
 
 export const store = configureStore({
-  reducer: { SignUpReducer, LogInReducer },
+  reducer: {
+    SignUpToHide: SignUpReducer,
+    LogInToHide: LogInReducer,
+  },
 });
