@@ -56,19 +56,7 @@ function LogIn() {
   };
 
   return (
-    <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
-      <div className="sm:mx-auto sm:w-full sm:max-w-sm flex flex-rows align-items-center ">
-        <img className="mx-auto h-10 w-auto" src="#" alt="Your Company" />
-        <NavLink to="/Sign-Up">
-          <button
-            type="submit"
-            className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-          >
-            Sign up
-          </button>
-        </NavLink>
-      </div>
-
+    <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8 ">
       <h2 className="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900">
         Login in to your account
       </h2>
@@ -133,7 +121,7 @@ function LogIn() {
           <div>
             <button
               type="submit"
-              className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 mb-10"
             >
               Log in
             </button>
