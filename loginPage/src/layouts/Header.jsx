@@ -3,8 +3,10 @@ import { Link, NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 export default function Header() {
-  const isLogInHidden = useSelector((state) => state.isLogInHidden);
-  const isSignUpHidden = useSelector((state) => state.isSignUpHidden);
+  const isLogInHidden = useSelector((state) => state.LogInToHide.isLogInToHide);
+  const isSignUpHidden = useSelector(
+    (state) => state.SignUpToHide.isSignUpToHide
+  );
 
   const isHidden = isLogInHidden || isSignUpHidden ? true : false;
   return (
