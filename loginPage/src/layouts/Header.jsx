@@ -1,14 +1,25 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { logInToHide, signUpToHide } from "../features";
 
 export default function Header() {
   const isLogInHidden = useSelector((state) => state.LogInToHide.isLogInToHide);
   const isSignUpHidden = useSelector(
     (state) => state.SignUpToHide.isSignUpToHide
   );
-
   const isHidden = isLogInHidden || isSignUpHidden ? true : false;
+  const dispatch = useDispatch();
+
+  const Logout = useCallback(
+    (e) => {
+      e.preventDefault();
+      dispatch(logInToHide(false));
+      dispatch(signUpToHide(false));
+    },
+    [isHidden]
+  );
+
   return (
     <header className="shadow sticky z-50 top-0">
       <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5">
@@ -22,6 +33,14 @@ export default function Header() {
           </Link>
 
           <div className="flex items-center lg:order-2">
+            <Link
+              className={`text-gray-800 hover:bg-red-300 focus:ring-4 focus:ring-gray-300 
+                font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 
+                focus:outline-none ${!isHidden ? "hidden" : ""}`}
+              onClick={Logout}
+            >
+              Logout
+            </Link>
             <Link
               to="/Log-in"
               className={`text-gray-800 hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 
