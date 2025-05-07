@@ -1,7 +1,3 @@
-Here’s a beautifully formatted `README.md` for your **React Mini Projects Collection** repository:
-
----
-
 # 🚀 React Mini Projects Collection
 
 Welcome to the **React Mini Projects Collection** – a curated set of simple yet powerful projects built using **React.js**. These mini apps help reinforce fundamental React concepts such as **state management**, **routing**, **hooks**, and **component-based architecture**.
